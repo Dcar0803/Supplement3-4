@@ -1,10 +1,9 @@
 const request = require('supertest');
 
-const express = require('express');
-
-const app = require('../server'); // The server to be tested
-
+const createServer= require('../server'); // The server to be tested
 describe("POST / - Root Endpoint", () => {
+
+    const app = createServer();
     
     test("It should respond with the 'content' field from the JSON body", async () => {
         const response = await request(app)
