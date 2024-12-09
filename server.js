@@ -1,5 +1,18 @@
 const express = require('express');
 
+/**
+ * Creates and configures an Express application with a POST endpoint at the root.
+ * 
+ * @returns {object} - The configured Express application.
+ * 
+ * ### Description:
+ * This function sets up an Express application with:
+ * - JSON body parsing middleware.
+ * - A POST endpoint at the root ("/") that:
+ *   - Responds with the `content` field from the JSON body if provided.
+ *   - Returns a 400 status code with an error message if the `content` field is missing.
+ */
+
 function createServer() {
     const app = express();
 
